@@ -4,12 +4,17 @@ nav {
     justify-content: flex-end;
 }
 
-.lastBlock {
-    flex-grow: 3;
+.navLast {
+    flex-grow: 4;
 }
 
-.firstBlock {
+.navFirst {
     flex-grow: 10;
+}
+
+.navEntry {
+    cursor: pointer;
+    font-size: 2rem;
 }
 
 nav > div {
@@ -26,7 +31,3 @@ nav > div {
     background-color:rgba(0,0,0,0);
 }
 
-.navEntry {
-    cursor: pointer;
-    font-size: 2rem;
-}

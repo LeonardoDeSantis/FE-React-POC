@@ -4,11 +4,11 @@ import './Navigation.css'
 const Navigation = ({ setRoute, selected }) => {
     return (
         <nav>
-            <div className='firstBlock'></div>
+            <div className='navFirst'></div>
             {getNavEntry('About', 'about', setRoute, selected)}
             {getNavEntry('Projects', 'projects', setRoute, selected)}
             {getNavEntry('Skills', 'skills', setRoute, selected)}
-            <div className='lastBlock'></div>
+            <div className='navLast'></div>
         </nav>
     )
 }
