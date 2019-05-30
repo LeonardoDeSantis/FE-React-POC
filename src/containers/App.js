@@ -20,7 +20,7 @@ class App extends Component {
     const { route } = this.state;
     return (
       <div>
-        <Navigation setRoute={this.setRoute}></Navigation>
+        <Navigation setRoute={this.setRoute} selected={route}></Navigation>
         {getComponentFromRoute(route)}
       </div>
     );

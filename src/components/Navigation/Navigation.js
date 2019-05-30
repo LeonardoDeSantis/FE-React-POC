@@ -1,30 +1,24 @@
 import React from 'react';
-import NavEntry from './NavEntry'
 import './Navigation.css'
 
-const Navigation = ({ setRoute }) => {
+const Navigation = ({ setRoute, selected }) => {
     return (
         <nav>
             <div className='firstBlock'></div>
-                {
-                    getEntries(setRoute).map((element, index) => {
-                        return <NavEntry
-                            key={index}
-                            name={element.name}
-                            onClick={element.onClick} />
-                    })
-                }
+            {getNavEntry('About', 'about', setRoute, selected)}
+            {getNavEntry('Projects', 'projects', setRoute, selected)}
+            {getNavEntry('Skills', 'skills', setRoute, selected)}
             <div className='lastBlock'></div>
         </nav>
     )
 }
 
-function getEntries(setRoute) {
-    return [
-        { "name": 'About', "onClick": () => setRoute('about') },
-        { "name": 'Projects', "onClick": () => setRoute('projects') },
-        { "name": 'Skills', "onClick": () => setRoute('skills') }
-    ];
+function getNavEntry(name, route, setRoute, selected) {
+    let className = 'navEntry';
+    if (selected === route) {
+        className += ' transparent';
+    }
+    return <div className={className} onClick={() => setRoute(route)}>{name}</div>;
 }
 
 export default Navigation;
