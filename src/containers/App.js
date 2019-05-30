@@ -12,15 +12,15 @@ class App extends Component {
     }
   }
 
-  changeNavEntry = (entry) => {
-    this.setState({ route: entry });
+  setRoute = (route) => {
+    this.setState({ route: route });
   }
 
   render() {
     const { route } = this.state;
     return (
       <div>
-        <Navigation changeNavEntry={this.changeNavEntry}></Navigation>
+        <Navigation setRoute={this.setRoute}></Navigation>
         {getComponentFromRoute(route)}
       </div>
     );
