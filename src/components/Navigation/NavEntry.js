@@ -2,7 +2,7 @@ import React from 'react';
 
 const NavEntry = ({ name, onClick }) => {
     return (
-            <p className='pointer hover-yellow f3 pa2 shadow-1 mr5 ml5' onClick={onClick}>{name}</p>
+            <div className='navEntry' onClick={onClick}>{name}</div>
     )
 }
 

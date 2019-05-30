@@ -1,4 +1,28 @@
-.navigation {
+
+nav {
     display: flex;
     justify-content: flex-end;
+}
+
+.lastBlock {
+    flex-grow: 3;
+}
+
+.firstBlock {
+    flex-grow: 10;
+}
+
+nav > div {
+    background-color: whitesmoke;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+
+.navEntry:hover {
+    background-color:rgba(0,0,0,0);
+}
+
+.navEntry {
+    cursor: pointer;
+    font-size: 2rem;
 }
