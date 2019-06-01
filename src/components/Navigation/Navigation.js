@@ -5,9 +5,9 @@ const Navigation = ({ setRoute, selected }) => {
     return (
         <nav>
             <div className='navFirst'></div>
-            {getNavEntry('About', 'about', setRoute, selected)}
-            {getNavEntry('Projects', 'projects', setRoute, selected)}
-            {getNavEntry('Skills', 'skills', setRoute, selected)}
+            {getNavEntry('CompExample', 'comp', setRoute, selected)}
+            {getNavEntry('RouteB', 'routeb', setRoute, selected)}
+            {getNavEntry('RouteC', 'routec', setRoute, selected)}
             <div className='navLast'></div>
         </nav>
     )
@@ -16,7 +16,7 @@ const Navigation = ({ setRoute, selected }) => {
 function getNavEntry(name, route, setRoute, selected) {
     let className = 'navEntry';
     if (selected === route) {
-        className += ' transparent';
+        className += ' selected';
     }
     return <div className={className} onClick={() => setRoute(route)}>{name}</div>;
 }

@@ -4,5 +4,10 @@
 }
 
 body {
-  background-image: url('./desert.jfif')
+  background-image: url('./desert.jfif');
+}
+
+.content {
+  font-size: 5rem;
+  text-align: center;
 }

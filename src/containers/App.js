@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Navigation from '../components/Navigation/Navigation';
-import Projects from '../components/Projects';
-import Skills from '../components/Skills';
+import RouteC from '../components/RouteC';
+import RouteB from '../components/RouteB';
 
 class App extends Component {
 
   constructor() {
     super();
     this.state = {
-      route: "projects"
+      route: "routeb"
     }
   }
 
@@ -29,9 +29,9 @@ class App extends Component {
 
 function getComponentFromRoute(route) {
   switch (route) {
-    case 'projects': return <Projects />
-    case 'skills': return <Skills />
-    default: return <Projects />
+    case 'routec': return <RouteC />
+    case 'routeb': return <RouteB />
+    default: return <RouteB />
   }
 }
 
