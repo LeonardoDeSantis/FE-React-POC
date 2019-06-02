@@ -2,25 +2,28 @@ import React, { Component } from 'react';
 import Navigation from '../components/Navigation/Navigation';
 import RouteC from '../components/RouteC';
 import RouteB from '../components/RouteB';
+import { connect } from 'react-redux';
+import { setRoute } from '../actions'
+
+const mapStateToProps = (state) => {
+  return {
+    route: state.route
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setRoute: (route) => dispatch(setRoute(route))
+  }
+}
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      route: "routeb"
-    }
-  }
-
-  setRoute = (route) => {
-    this.setState({ route: route });
-  }
-
   render() {
-    const { route } = this.state;
+    const { route, setRoute } = this.props;
     return (
       <div>
-        <Navigation setRoute={this.setRoute} selected={route}></Navigation>
+        <Navigation setRoute={setRoute} selected={route}></Navigation>
         {getComponentFromRoute(route)}
       </div>
     );
@@ -35,4 +38,4 @@ function getComponentFromRoute(route) {
   }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
