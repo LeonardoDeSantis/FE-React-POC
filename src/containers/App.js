@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Navigation from '../components/Navigation/Navigation';
+import Navigation from './Navigation/Navigation';
 import RouteC from '../components/RouteC';
 import RouteB from '../components/RouteB';
 import { connect } from 'react-redux';
-import { setRoute } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -11,19 +10,13 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setRoute: (route) => dispatch(setRoute(route))
-  }
-}
-
 class App extends Component {
 
   render() {
-    const { route, setRoute } = this.props;
+    const { route } = this.props;
     return (
       <div>
-        <Navigation setRoute={setRoute} selected={route}></Navigation>
+        <Navigation></Navigation>
         {getComponentFromRoute(route)}
       </div>
     );
@@ -38,4 +31,4 @@ function getComponentFromRoute(route) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, {})(App);
