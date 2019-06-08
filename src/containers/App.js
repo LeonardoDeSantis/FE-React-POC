@@ -18,6 +18,7 @@ class App extends Component {
       <div className='App'>
         <Navigation></Navigation>
         {getComponentFromRoute(route)}
+        <footer>Photo by Jackson Hendry on Unsplash</footer>
       </div>
     );
   }
