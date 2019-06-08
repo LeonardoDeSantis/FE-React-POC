@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     const { route } = this.props;
     return (
-      <div>
+      <div className='App'>
         <Navigation></Navigation>
         {getComponentFromRoute(route)}
       </div>
