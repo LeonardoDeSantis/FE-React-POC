@@ -1,0 +1,10 @@
+input {
+    font-size: 2rem;
+}
+
+// Fixed size because robohash is returning always a 300 x 300 image 
+.roboimg {
+    height: 300px;
+    width: 300px;
+    margin-top: 10px;
+}
